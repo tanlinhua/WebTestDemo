@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route</title>
+    <style>
+        #router-view {
+            width: 300px;
+            height: 300px;
+            display: inline-block;
+            background-color: rgb(159, 212, 214);
+        }
+    </style>
+</head>
+
+<body>
+    <input value="Hello World">
+
+    <div id="router-view"></div>
+</body>
+
+<script>
+    var routers = [
+        { path: '/user/list', html: `用户列表页 <a href='#/user/detail'>详情页</a>` },
+        { path: '/user/detail', html: `用户详情页 <a href='#/user/list'>列表页</a>` },
+    ];
+
+    function doRoute() {
+        let currentPath = location.hash.substr(1);
+        console.log(currentPath);
+        let target = routers.find(item => { return item.path == currentPath });
+        let routerView = document.querySelector('#router-view');
+        if (!target) {
+            routerView.innerHTML = `<h3>404</h3>`;
+            return;
+        }
+        routerView.innerHTML = target.html;
+    }
+
+    window.onhashchange = (e) => {
+        doRoute();
+    };
+    doRoute();
+</script>
+
+</html>
