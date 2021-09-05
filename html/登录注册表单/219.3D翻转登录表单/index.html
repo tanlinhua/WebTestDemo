@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D翻转登录表单</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <ul class="nav">
+      <li onclick="showLogin()">登录</li>
+      <li onclick="showSignup()">注册</li>
+      <li onclick="showForgotPassword()">忘记密码</li>
+      <li onclick="showSubscribe()">订阅</li>
+      <li onclick="showContactUs()">联系小智</li>
+    </ul>
+    <div class="wrapper">
+      <div class="rec-prism">
+        <div class="face face-top">
+          <div class="content">
+            <h2>订阅</h2>
+            <small
+              >订阅《CSS 世界特效》，关注公众号《大迁世界》，让你的牛 B!</small
+            >
+            <form onsubmit="event.preventDefault()">
+              <div class="field-wrapper">
+                <input type="text" name="邮箱" placeholder="邮箱" />
+                <label>邮箱</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit" onclick="showThankYou()" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="face face-front">
+          <div class="content">
+            <h2>登 录</h2>
+            <form onsubmit="event.preventDefault()">
+              <div class="field-wrapper">
+                <input type="text" name="username" placeholder="用户名" />
+                <label>用户名</label>
+              </div>
+              <div class="field-wrapper">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="密码"
+                  autocomplete="new-password"
+                />
+                <label>密码</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit" onclick="showThankYou()" />
+              </div>
+              <span class="psw" onclick="showForgotPassword()">忘记密码? </span>
+              <span class="signup" onclick="showSignup()"
+                >没有关注？ 去关注吧</span
+              >
+            </form>
+          </div>
+        </div>
+        <div class="face face-back">
+          <div class="content">
+            <h2>忘记密码?</h2>
+            <small
+              >订阅《CSS 世界特效》，关注公众号《大迁世界》，让你的牛 B!</small
+            >
+            <form onsubmit="event.preventDefault()">
+              <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email" />
+                <label>邮箱</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit" onclick="showThankYou()" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="face face-right">
+          <div class="content">
+            <h2>注 册</h2>
+            <form onsubmit="event.preventDefault()">
+              <div class="field-wrapper">
+                <input type="text" name="email" placeholder="邮箱" />
+                <label>邮箱</label>
+              </div>
+              <div class="field-wrapper">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="密码"
+                  autocomplete="new-password"
+                />
+                <label>密码</label>
+              </div>
+              <div class="field-wrapper">
+                <input
+                  type="password"
+                  name="password2"
+                  placeholder="password"
+                  autocomplete="new-password"
+                />
+                <label>重置密码</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit" onclick="showThankYou()" />
+              </div>
+              <span class="singin" onclick="showLogin()"
+                >没关注小智? 那还不赶紧去</span
+              >
+            </form>
+          </div>
+        </div>
+        <div class="face face-left">
+          <div class="content">
+            <h2>联系我们</h2>
+            <form onsubmit="event.preventDefault()">
+              <div class="field-wrapper">
+                <input type="text" name="name" placeholder="name" />
+                <label>Name</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email" />
+                <label>e-mail</label>
+              </div>
+              <div class="field-wrapper">
+                <textarea placeholder="your message"></textarea>
+                <label>your message</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit" onclick="showThankYou()" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="face face-bottom">
+          <div class="content">
+            <div class="thank-you-msg">Thank you!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
