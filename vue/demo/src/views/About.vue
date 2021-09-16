@@ -62,11 +62,7 @@ export default {
       return this.num1 + this.num2;
     },
     show() {
-      if (this.isShow) {
-        this.isShow = false;
-      } else {
-        this.isShow = true;
-      }
+      this.isShow = !this.isShow;
     }
   },
 }
