@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyScript DOM 交互</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-700">
+<div class="container bg-white my-10 p-5 max-w-2xl center rounded-md shadow-md">
+    <h1 class="text-2xl">PyScript DOM 交互</h1>
+    <textarea id="message" cols="30" rows="10" class="w-full border-solid border-2 my-4 rounded-md"></textarea>
+    <div id="output"></div>
+    <div>
+        <input pys-onClick="show" class="cursor-pointer text-white bg-green-600 rounded-md py-2 px-8" id="display" type="button" value="显示">
+        <input pys-onClick="clear" class="cursor-pointer text-white bg-red-600 rounded-md py-2 px-8" id="clear" type="button" value="清空">
+    </div>
+</div>
+<py-script>
+txt_message = Element("message")
+container = Element("output")
+
+def clear(*args, **kwargs):
+    txt_message.clear()
+
+def show(*args, **kwargs):
+    container.write(txt_message.value)
+</py-script>
+</body>
+</html>
